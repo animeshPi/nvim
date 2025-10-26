@@ -33,6 +33,27 @@ return {
   },
 
   {
+    "tpope/vim-fugitive",
+    lazy = false,  -- load immediately
+    config = function()
+      local map = vim.api.nvim_set_keymap
+      local opts = { noremap = true, silent = true }
+
+      -- Git status
+      map("n", "<leader>gs", ":Git<CR>", opts)
+      -- Stage current file
+      map("n", "<leader>gc", ":Gwrite<CR>", opts)
+      -- Show blame
+      map("n", "<leader>gb", ":Gblame<CR>", opts)
+      -- Git log for current file
+      map("n", "<leader>gl", ":Glog<CR>", opts)
+      -- Pull and push
+      map("n", "<leader>gp", ":Git pull<CR>", opts)
+      map("n", "<leader>gP", ":Git push<CR>", opts)
+    end
+  },
+
+  {
     "toppair/peek.nvim",
     event = { "VeryLazy" },
     build = "deno task --quiet build:fast",
