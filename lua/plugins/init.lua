@@ -23,16 +23,6 @@ return {
   },
 
   {
-    "lervag/vimtex",
-    lazy = false,     -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
-    init = function()
-      -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = "zathura"
-    end
-  },
-
-  {
     "tpope/vim-fugitive",
     lazy = false,  -- load immediately
     config = function()
@@ -54,44 +44,33 @@ return {
   },
 
   {
-    "toppair/peek.nvim",
-    event = { "VeryLazy" },
-    build = "deno task --quiet build:fast",
-    config = function()
-      require("peek").setup({
-        auto_load = true,
-        theme = "dark",
-        app = "browser",
-      })
-      vim.api.nvim_create_user_command("PeekO", require("peek").open, {})
-      vim.api.nvim_create_user_command("PeekC", require("peek").close, {})
-    end,
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      views = {
+        cmdline_popup = {
+          position = {
+            row = "31%",
+            col = "50%",
+          },
+        },
+      },
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
   },
-
-  {
-    'stevearc/oil.nvim',
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-    lazy = false,
-  },
-
-  { 'nvim-mini/mini.icons', version = '*' },
-
   -- test new blink
-  { import = "nvchad.blink.lazyspec" },
+  -- { import = "nvchad.blink.lazyspec" },
 
-  {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css"
-  		},
-  	},
-  },
+  -- {
+  -- 	"nvim-treesitter/nvim-treesitter",
+  -- 	opts = {
+  -- 		ensure_installed = {
+  -- 			"vim", "lua", "vimdoc",
+  --      "html", "css"
+  -- 		},
+  -- 	},
+  -- },
 }

@@ -18,26 +18,13 @@ M.ui = {
   telescope = { style = "bordered" },
 
   statusline = {
-    style = "vscode_colored",
+    theme = "vscode_colored",
     separator_style = "default",
     order = nil,
     modules = nil,
-  }
-}
-
-M.nvdash = {
-  load_on_startup = true,
-  header = {
-    "███╗   ██╗███████╗ █████╗ ██╗  ██╗██╗   ██╗",
-    "████╗  ██║██╔════╝██╔══██╗██║ ██╔╝╚██╗ ██╔╝",
-    "██╔██╗ ██║█████╗  ███████║█████╔╝  ╚████╔╝ ",
-    "██║╚██╗██║██╔══╝  ██╔══██║██╔═██╗   ╚██╔╝  ",
-    "██║ ╚████║███████╗██║  ██║██║  ██╗   ██║   ",
-    "╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ",
-    "           by @pi.the.penguin              ",
-    "                                           ",
   },
 }
+-- M.nvdash = { load_on_startup = true }
 -- M.ui = {
 --       tabufline = {
 --          lazyload = false

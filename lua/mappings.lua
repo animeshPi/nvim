@@ -12,7 +12,6 @@ map('i', '<C-j>', function ()
   vim.fn.feedkeys(vim.fn['copilot#Accept'](), '')
 end, { desc = 'Copilot Accept', noremap = true, silent = true })
 
--- For moving lines of code
 -- Move line down
 map("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line down" })
 map("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line up" })
