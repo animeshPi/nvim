@@ -35,3 +35,9 @@ require "autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Emergency escape: always close floating popups
+vim.keymap.set({ "i", "n" }, "<Esc>", function()
+  vim.cmd("stopinsert")
+  vim.cmd("silent! pclose")
+end, { desc = "Close popups and return to normal mode" })

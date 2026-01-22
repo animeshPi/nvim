@@ -47,6 +47,11 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
+      lsp = {
+        signature = {
+          enabled = false,
+        },
+      },
       views = {
         cmdline_popup = {
           position = {
@@ -62,15 +67,25 @@ return {
     },
   },
   -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
+  { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+  			"vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "go",
+        "rust",
+        "cpp",
+        "c",
+        "python",
+        "javascript",
+        "typescript",
+  		},
+  	},
+  },
 }
