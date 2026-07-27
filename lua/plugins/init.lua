@@ -23,6 +23,17 @@ return {
   },
 
   {
+    "nvim-tree/nvim-tree.lua",
+    opts = function(_, opts)
+      opts.filters = opts.filters or {}
+      opts.filters.git_ignored = false
+
+      opts.git = opts.git or {}
+      opts.git.ignore = false
+    end,
+  },
+
+  {
     "tpope/vim-fugitive",
     lazy = false,  -- load immediately
     config = function()
