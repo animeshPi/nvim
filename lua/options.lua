@@ -8,3 +8,15 @@ require "nvchad.options"
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
+
+vim.opt.list = true
+
+vim.opt.listchars = {
+  space = "·",
+  tab = "│ ",
+  trail = "·",
+}
+
+vim.api.nvim_set_hl(0, "Whitespace", {
+  fg = "#3a3a3a",
+})
